@@ -27,6 +27,12 @@ c) correct answer (I would use a number for this)
     this.question = question;
     this.answers = answers;
     this.correctAnsNum = correctAnsNum;
+    this.questionText = (function(question, answers) {
+      var questionText = question;
+      for (var i = 0; i < answers.lenght; i++) {
+        questionText += i + "." + answers[i] + "; ";
+      }
+    })();
   };
 
   var question1 = new Question(
@@ -34,16 +40,15 @@ c) correct answer (I would use a number for this)
     ["Mark", "Egor", "Eugen"],
     1
   );
-
   var question2 = new Question(
     "What is my city?",
     ["Moscow", "St Petersburg", "Irkuts"],
     2
   );
-
   var question3 = new Question("How old am i?", [34, 25, 67], 2);
 
   var allQuestions = [question1, question2, question3];
+
   /**
    *
    * @param {* масив вопросов } allQuestions
@@ -54,10 +59,7 @@ c) correct answer (I would use a number for this)
     ];
   }
 
-  var randomQuestion  = getRandomQuestion(allQuestions);
+  var randomQuestion = getRandomQuestion(allQuestions);
 
-  var ans = prompt(randomQuestion.question);
-
-  if()
-
+  var ans = prompt(randomQuestion.questionText);
 })();
