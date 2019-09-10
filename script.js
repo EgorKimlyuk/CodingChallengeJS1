@@ -1,16 +1,5 @@
-var Person = function(name,yearOfbirth,job){
-    this.name = name;
-    this.yearOfbirth = yearOfbirth;
-    this.job = job;
-}
-
-var john = new Person("john",1994,"teacher");
-
-console.info(john);
-
 /////////////////////////////
 // CODING CHALLENGE
-
 
 /*
 --- Let's build a fun quiz game in the console! ---
@@ -32,3 +21,43 @@ c) correct answer (I would use a number for this)
 
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
+
+(function() {
+  var Question = function(question, answers, correctAnsNum) {
+    this.question = question;
+    this.answers = answers;
+    this.correctAnsNum = correctAnsNum;
+  };
+
+  var question1 = new Question(
+    "What is my name?",
+    ["Mark", "Egor", "Eugen"],
+    1
+  );
+
+  var question2 = new Question(
+    "What is my city?",
+    ["Moscow", "St Petersburg", "Irkuts"],
+    2
+  );
+
+  var question3 = new Question("How old am i?", [34, 25, 67], 2);
+
+  var allQuestions = [question1, question2, question3];
+  /**
+   *
+   * @param {* масив вопросов } allQuestions
+   */
+  function getRandomQuestion(allQuestions) {
+    return allQuestions[
+      allMath.round(Math.random() * (allQuestions.lenght - 1))
+    ];
+  }
+
+  var randomQuestion  = getRandomQuestion(allQuestions);
+
+  var ans = prompt(randomQuestion.question);
+
+  if()
+
+})();
